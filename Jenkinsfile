@@ -1,23 +1,10 @@
 pipeline {
-    agent any
-
-    stages {
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
-        }
-
-        stage('Build') {
-            steps {
-                sh 'npm install'
-            }
-        }
-
-        stage('Run') {
-            steps {
-                sh 'docker ps'
-            }
-        }
-    }
+agent any
+stages {
+ stage('Build Docker Image') {
+ steps {
+ sh 'docker build -t nodeapp:${BUILD_NUMBER} .'
+ }
+ }
+}
 }

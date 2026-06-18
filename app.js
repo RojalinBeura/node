@@ -4,7 +4,7 @@ app.get("/", (req, res) => {
   res.send("Hello Docker");
 });
 app.listen(3000, () => {
-  console.log("Server running on port 3000");
+  console.log("Server running  port 3000");
 });
 
 
